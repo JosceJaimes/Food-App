@@ -79,7 +79,7 @@ const getData = (data) => {
           <div class="address">
             <p>DIrección: Calle: ${compleatData.contact.street}, ${compleatData.contact.city} ${compleatData.contact.state}</p>
           </div>
-          <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#${compleatData.id}">
+          <a type="button" class="btn btn-danger" data-toggle="modal" data-target="#${compleatData.id}">
           Ubicacion
         </a>
       

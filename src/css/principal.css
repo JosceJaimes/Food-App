@@ -8,18 +8,24 @@ img{
     text-align: center;
 }
 .container2{
-    background-color: rgb(191, 81, 59);
+    background-color: rgb(163, 32, 56);
 }
 
 .container{
     margin: 3px;
     margin-bottom: 10px;
     padding: 20px;
-    background-color: rgb(219, 219, 181);
+    background-color: rgb(252, 193, 176);
     color: black;
 }
 
 .card{
     border-radius: 16px solid black;
     padding: 10px;
+}
+
+.result{
+    border-radius: 16px solid black;
+    padding: 10px;
+    background-color: blueviolet
 }
