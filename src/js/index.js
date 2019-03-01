@@ -5,8 +5,8 @@ const mapas = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCKhOEz3dfatjCWw
 
 const initMap = (adress) =>{
    const location = adress.location;
-
-   const {lng, lat } = location;
+    console.log(location.lng)
+//    const {lng, lat } = location;
 
 //    let map = new google.maps.Map(document.getElementById('map'), {
 //        center: {lat, lng},
