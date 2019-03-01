@@ -1,13 +1,24 @@
-const space = document.getElementById('result')
+const space = document.getElementById('result');
+// const key_apy = 'AIzaSyCKhOEz3dfatjCWwBhezu_dxR7KgNoCYIU'
+const mapas = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCKhOEz3dfatjCWwBhezu_dxR7KgNoCYIU&callback=initMap' 
 
-const getlocation = (adress) =>{
+
+const initMap = (adress) =>{
    const location = adress.location;
+
    const {lng, lat } = location;
+
+//    let map = new google.maps.Map(document.getElementById('map'), {
+//        center: {lat, lng},
+//        zoom:8
+//    })
 
    const ubication = {
     lng, 
     lat
    }
+
+   console.log(ubication)
    return ubication;
    
   
@@ -15,7 +26,7 @@ const getlocation = (adress) =>{
 const getContact = (restaurant) =>{
     const contacto = restaurant.contact;
     const adress = restaurant.address
-    const location = getlocation(adress);    
+    const location = initMap(adress);    
     const {site, email, phone } = contacto
     const {street, city, state } = adress
     const dataContact = {
@@ -60,25 +71,29 @@ const getData = (data) => {
     <p>${compleatData.contact.city}</p>
     <p>${compleatData.contact.state}</p>
     <p>${compleatData.id}</p>
+    <div id="map">${compleatData.contact}</div>
+
     </div>
+
     <a type="button" class="btn btn-primary" data-toggle="modal" data-target="#${compleatData.id}">
     Ubicacion
   </a>
-    
-    <div class="modal fade" id="${compleatData.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
+
+    <div class="modal fade" id="${compleatData.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="${compleatData.id}">Modal title</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <p>${compleatData.id}</p>
+         <div id="map"></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>

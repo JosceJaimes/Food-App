@@ -3,5 +3,7 @@ function timeout(){
 window.setTimeout("redirect()",2000)}
 
 function redirect(){
-window.location="../view/principal.html"
+window.location="./view/principal.html"
 return}
+   
+
