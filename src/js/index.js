@@ -51,6 +51,7 @@ const getData = (data) => {
     const restaurant = element;
     // console.log(restaurant)
     const {id, rating, name, img } = restaurant
+    console.log(img);
     const contact = getContact(restaurant)
 
 
