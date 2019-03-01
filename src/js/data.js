@@ -1,4 +1,4 @@
-const url = 'https://api.myjson.com/bins/ve3x6';
+const url = 'https://api.myjson.com/bins/k906m';
 
 window.onload = () =>{
     fetch(url)

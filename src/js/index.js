@@ -5,8 +5,8 @@ const mapas = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCKhOEz3dfatjCWw
 
 const initMap = (adress) =>{
    const location = adress.location;
-    console.log(location.lng)
-//    const {lng, lat } = location;
+    // console.log(location.lng)
+   const {lng, lat } = location;
 
 //    let map = new google.maps.Map(document.getElementById('map'), {
 //        center: {lat, lng},
@@ -50,7 +50,7 @@ const getData = (data) => {
     data.forEach(element => {
     const restaurant = element;
     // console.log(restaurant)
-    const {id, rating, name } = restaurant
+    const {id, rating, name, img } = restaurant
     const contact = getContact(restaurant)
 
 
@@ -58,12 +58,19 @@ const getData = (data) => {
       id, 
       rating, 
       name,
+      img,
       contact, 
     }
 
     space.innerHTML += `
     <div class="container">
-    <p>${compleatData.name}</p>
+    <div class="title">
+    <h3>${compleatData.name}</h3>
+    </div>
+    <div class="info">
+    <div class="image">
+    <img class="responsive-img" src="${compleatData.img}">
+    </div>
     <p>${compleatData.rating}</p>
     <p>${compleatData.contact.email}</p>
     <p>${compleatData.contact.phone}</p>
@@ -71,7 +78,8 @@ const getData = (data) => {
     <p>${compleatData.contact.city}</p>
     <p>${compleatData.contact.state}</p>
     <p>${compleatData.id}</p>
-    <div id="map">${compleatData.contact}</div>
+    </div>
+
 
     </div>
 
